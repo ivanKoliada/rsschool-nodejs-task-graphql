@@ -206,17 +206,17 @@ query usersSubscriberProfiles {
 ```
 query userFollowersPosts($id: ID!) {
   userFollowersPosts(id: $id) {
-    id
-    firstName
-    lastName
-    email
-    subscribedToUserIds
-    subscriberPosts{
-      id
-      title
-      content
-      userId
-    }
+	id
+	firstName
+	lastName
+	email
+	subscribedToUserIds
+	subscriberPosts {
+		id
+		title
+		content
+		userId
+    	}
   }
 }
 ```
@@ -323,17 +323,17 @@ mutation createUser($input: CreateUserInput!){
 
 ```
 mutation createProfile($input: CreateProfileInput!) {
-    createProfile(input: $input) {
+  createProfile(input: $input) {
     	id
     	avatar
     	sex
-      birthday
-      country
-      street
-      city
-      memberTypeId
-      userId    
-  	}    
+	birthday
+	country
+	street
+	city
+	memberTypeId
+	userId    
+  }    
 }
 ```
 
@@ -360,7 +360,7 @@ mutation createProfile($input: CreateProfileInput!) {
 mutation createPost($input: CreatePostInput!){
   createPost(input: $input) {
     	id
-      title
+      	title
     	content
     	userId       
   }
@@ -497,12 +497,12 @@ mutation updateMemberType($id: ID!, $input: UpdateMemberTypeInput!) {
 
 ```
 mutation subscribeToUser($id: ID!, $input: SubscribeToUserInput!) {
-	  subscribeToUser(id: $id, input: $input) {
-    	id
+	subscribeToUser(id: $id, input: $input) {
+    		id
   		firstName
-      lastName
-      email
-    	subscribedToUserIds
+      		lastName
+      		email
+    		subscribedToUserIds
   	}
 }
 ```
@@ -522,12 +522,12 @@ mutation subscribeToUser($id: ID!, $input: SubscribeToUserInput!) {
 
 ```
 mutation unsubscribeFromUser($id: ID!, $input: UnsubscribeFromUserInput!) {
-	  unsubscribeFromUser(id: $id, input: $input) {
-    	id
+	unsubscribeFromUser(id: $id, input: $input) {
+    		id
   		firstName
-    	lastName
-    	email
-    	subscribedToUserIds
+    		lastName
+    		email
+    		subscribedToUserIds
   	}
 }
 ```
@@ -547,11 +547,11 @@ mutation unsubscribeFromUser($id: ID!, $input: UnsubscribeFromUserInput!) {
 
 `development with MercuriusLoaders`
 
-Solved n+1 graphql problem with MercuriusLoaders in all places where it should have been used.
+Solved n+1 graphql problem with **MercuriusLoaders** in all places where it should have been used.
 
 ## Graphql-depth-limit
 
 `development graphql-depth-limit package`
 
-added a new rule (created by "graphql-depth-limit") in validation to limit such nesting to 6 levels max.
+added a new rule (created by "graphql-depth-limit") in validation to limit such nesting to **6** levels max.
 
