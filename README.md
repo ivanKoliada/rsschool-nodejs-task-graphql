@@ -549,9 +549,14 @@ mutation unsubscribeFromUser($id: ID!, $input: UnsubscribeFromUserInput!) {
 
 Solved n+1 graphql problem with **MercuriusLoaders** in all places where it should have been used.
 
+https://github.com/ivanKoliada/rsschool-nodejs-task-graphql/blob/dc132de5e29eba685366dbfa081f9d1416e6b16f/src/routes/graphql/dataLoader.ts#L4
+https://github.com/ivanKoliada/rsschool-nodejs-task-graphql/blob/dc132de5e29eba685366dbfa081f9d1416e6b16f/src/routes/graphql/resolvers/getUserWithEntities/typeDefs.ts#L5
+
 ## Graphql-depth-limit
 
 `development graphql-depth-limit package`
 
 added a new rule (created by "graphql-depth-limit") in validation to limit such nesting to **6** levels max.
+
+https://github.com/ivanKoliada/rsschool-nodejs-task-graphql/blob/dc132de5e29eba685366dbfa081f9d1416e6b16f/src/app.ts#L16
 
